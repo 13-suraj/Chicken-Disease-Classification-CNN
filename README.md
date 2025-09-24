@@ -6,8 +6,8 @@ In this project I will do image classification using Convolution Neural Network.
 
 1. Update config.yaml
 2. Update secrets.yaml [optional]
-3. Update params.yaml
-4. Update the cntity
+3. Update the entity
+4. Update params.yaml
 5. Update the configuration manager in src config
 6. Update the components
 7. Update the pipeline
