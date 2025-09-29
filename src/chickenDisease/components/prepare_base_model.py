@@ -55,9 +55,14 @@ class PrepareBaseModel:
             freeze_till = None,
             learning_rate = self.config.params_learning_rate
         )
+        print("✅ Full model prepared.")
+
+        print(f"💾 Saving updated model to: {self.config.updated_base_model_path}")
 
         self.save_model(path = self.config.updated_base_model_path, model = self.full_model)
 
     @staticmethod
     def save_model(path: Path, model: tf.keras.Model):
+        print(f"📁 Saving model to path: {path}")
         model.save(path)
+        print(f"✅ Model successfully saved at: {path}")

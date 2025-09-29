@@ -1,6 +1,7 @@
 from chickenDisease.config.configuration import ConfigurationManager
 from chickenDisease.components.prepare_base_model import PrepareBaseModel
 from chickenDisease import logger
+import os
 
 STAGE_NAME = "Prepare Base Model Stage"
 
@@ -14,13 +15,15 @@ class PrepareBaseModelTrainingPipeline:
         prepare_base_model = PrepareBaseModel(config = prepare_base_model_config)
         prepare_base_model.get_base_model()
         prepare_base_model.update_base_model()
+        # output_dir = "artifacts/prepare_base_model"
+        # os.makedirs(output_dir, exist_ok=True)
     
-    # if __name__ == '__main__':
-    #     try:
-    #         logger.info(f">>>> stage {STAGE_NAME} started <<<<<")
-    #         obj = PrepareBaseModelTrainingPipeline()
-    #         obj.main()
-    #         logger.info(f">>>>> stage {STAGE_NAME} completed <<<<<\n\nx=========x")
-    #     except Exception as e:
-    #         logger.exception(e)
-    #         raise e
+if __name__ == '__main__':
+        try:
+            logger.info(f">>>> stage {STAGE_NAME} started <<<<<")
+            obj = PrepareBaseModelTrainingPipeline()
+            obj.main()
+            logger.info(f">>>>> stage {STAGE_NAME} completed <<<<<\n\nx=========x")
+        except Exception as e:
+            logger.exception(e)
+            raise e
