@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify, render_template
 import os
 from flask_cors import CORS, cross_origin
-from chickenDisease.utils.common import decodeImage
-from chickenDisease.pipeline.predict import PredictionPipeline
+from src.chickenDisease.utils.common import decodeImage
+from src.chickenDisease.pipeline.predict import PredictionPipeline
 
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
@@ -18,7 +18,7 @@ class ClientApp:
 @app.route("/", methods = ['GET'])
 @cross_origin()
 def home():
-    return render_template('index_html')
+    return render_template('index.html')
 
 @app.route("/train", methods = ['GET','POST'])
 @cross_origin()
@@ -36,4 +36,4 @@ def predictRoute():
 
 if __name__ == '__main__':
     clApp = ClientApp()
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8000)

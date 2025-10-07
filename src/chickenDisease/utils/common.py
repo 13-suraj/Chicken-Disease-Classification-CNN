@@ -4,7 +4,7 @@ import json
 import joblib
 import base64
 from box.exceptions import BoxValueError
-from chickenDisease import logger
+from src.chickenDisease import logger
 
 from ensure import ensure_annotations
 from box import ConfigBox
